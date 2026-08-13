@@ -5,71 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --ink: #2b2924;
+            --paper: #faf7f2;
+            --line: #e2ddd2;
+            --accent: #8a6d3b;
+            --accent-soft: #f1e6d3;
+            --ok: #4c6b4f;
         }
-
+ 
+        * { box-sizing: border-box; }
+ 
         body {
-            font-family: 'Segoe UI', 'Sarabun', Tahoma, sans-serif;
-            background-color: #f2f2f2;
-            color: #333333;
-            padding: 40px 20px;
+            margin: 0;
+            padding: 40px 24px;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Segoe UI", "Sarabun", system-ui, sans-serif;
+            line-height: 1.5;
         }
-
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto 30px auto;
-            background-color: #ffffff;
-            border: 1px solid #dddddd !important;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-        }
-
-        thead th {
-            background-color: #4a4a4a;
-            color: #ffffff;
-            padding: 12px 15px;
-            text-align: left;
-            font-weight: 500;
-            border: 1px solid #dddddd !important;
-        }
-
-        tbody td {
-            padding: 10px 15px;
-            border: 1px solid #e0e0e0 !important;
-            font-size: 14px;
-            color: #444444;
-        }
-
-        tbody tr:nth-child(even) {
-            background-color: #fafafa;
-        }
-
-        tbody tr:hover {
-            background-color: #eeeeee;
-            transition: background-color 0.2s ease;
-        }
-
-        a {
-            display: inline-block;
-            max-width: 1100px;
+ 
+        .page {
+            max-width: 1080px;
             margin: 0 auto;
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #6b6b6b;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 14px;
-            transition: background-color 0.2s ease;
         }
-
-        a:hover {
-            background-color: #4a4a4a;
+ 
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px solid var(--ink);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+ 
+        .page-header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+ 
+        .actions {
+            display: flex;
+            gap: 10px;
+        }
+ 
+        .actions a {
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid var(--ink);
+            border-radius: 3px;
+            color: var(--ink);
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+ 
+        .actions a:hover {
+            background: var(--ink);
+            color: var(--paper);
+        }
+ 
+        .actions a.primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+ 
+        .actions a.primary:hover {
+            background: #6f5730;
+            border-color: #6f5730;
+        }
+ 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            border: 1px solid var(--line);
+        }
+ 
+        thead th {
+            text-align: left;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #6b6455;
+            background: var(--accent-soft);
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+        }
+ 
+        tbody td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--line);
+            font-size: 14px;
+            vertical-align: middle;
+        }
+ 
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+ 
+        tbody tr:hover {
+            background: #fbf9f4;
+        }
+ 
+        td img {
+            width: 90px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            border: 1px solid var(--line);
+            display: block;
+        }
+ 
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #6b6455;
+            text-decoration: none;
+        }
+ 
+        .back-link:hover {
+            color: var(--ink);
+            text-decoration: underline;
+        }
+ 
+        .empty {
+            padding: 40px;
+            text-align: center;
+            color: #a39a86;
+            font-size: 14px;
         }
     </style>
+
 </head>
 <body>
 
